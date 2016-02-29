@@ -12,10 +12,21 @@ public void draw()
 	stroke(0,255,0);   
 	line(320,480,320,380);   
 	drawBranches(320,380,100,3*Math.PI/2);
-} 
-public void drawBranches(int x,int y, double branchLength, double angle) 
-{   
-	//your code here  
+}
+public void mouseClicked()
+{
+	if(mouseButton == LEFT)
+	{
+		branchAngle+=branchAngle/2;
+	}
+	else if(mouseButton == RIGHT)
+	{
+		branchAngle-=branchAngle/2;
+	}
+	redraw();
+}
+ public void drawBranches(int x,int y, double branchLength, double angle) 
+{    
 	double angle1 = angle + branchAngle;
 	double angle2 = angle - branchAngle;
 	branchLength*=fractionLength;
