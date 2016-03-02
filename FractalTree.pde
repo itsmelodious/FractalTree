@@ -22,10 +22,14 @@ public void mouseClicked()
 	if(mouseButton == LEFT)
 	{
 		branchAngle+=branchAngle/2;
+		if(branchAngle > 3.5)
+			branchAngle = .004;
 	}
 	else if(mouseButton == RIGHT)
 	{
 		branchAngle-=branchAngle/2;
+		if(branchAngle < 0.002)
+			branchAngle = 3.5;
 	}
 	redraw();
 }
